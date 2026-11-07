@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="cm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060204"/>
+      <stop offset="45%" stop-color="#0c0408"/>
+      <stop offset="85%" stop-color="#050103"/>
+      <stop offset="100%" stop-color="#020002"/>
+    </linearGradient>
+
+    <!-- Wave Gradient -->
+    <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#881337" stop-opacity="0.3"/>
+      <stop offset="30%" stop-color="#be123c" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#ff1744" stop-opacity="1"/>
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff1744" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <linearGradient id="wave-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff1744" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#881337" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="laser-sweep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1744" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ff1744" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="cm-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="b1"/>
+      <feGaussianBlur stdDeviation="6" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="cm-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#be123c" stroke-width="0.5" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <style>
+  <![CDATA[
+    text {
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      user-select: none;
+    }
+
+    /* Keyframes */
+    @keyframes waveOscillate {
+      0%, 100% {
+        d: path("M 40,135 Q 120,110 200,130 T 360,105 T 520,80 T 680,120 T 880,135");
+      }
+      50% {
+        d: path("M 40,135 Q 120,130 200,95 T 360,125 T 520,60 T 680,90 T 880,135");
+      }
+    }
+
+    @keyframes laserPass {
+      0% { transform: translateX(0px); opacity: 0; }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { transform: translateX(840px); opacity: 0; }
+    }
+
+    @keyframes pulseNode {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; filter: drop-shadow(0 0 8px #ff1744); }
+    }
+
+    @keyframes floatFrameBox {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+
+    @keyframes particleBurst {
+      0%, 100% { opacity: 0.2; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-6px); }
+    }
+
+    .laser-line { animation: laserPass 6s ease-in-out infinite; }
+    .wave-anim { animation: waveOscillate 5s ease-in-out infinite; }
+    .node-p1 { transform-origin: 520px 70px; animation: pulseNode 2.5s ease-in-out infinite; }
+    .node-p2 { transform-origin: 680px 105px; animation: pulseNode 3s ease-in-out infinite 0.7s; }
+    .node-p3 { transform-origin: 360px 115px; animation: pulseNode 2.2s ease-in-out infinite 1.2s; }
+    .float-hud-box { transform-origin: 520px 48px; animation: floatFrameBox 6s ease-in-out infinite; }
+    .burst-dot { animation: particleBurst 3s ease-in-out infinite; }
+  ]]>
+  </style>
+
+  <!-- Container -->
+  <rect width="920" height="220" fill="url(#cm-bg)" rx="6"/>
+  <rect width="920" height="220" fill="url(#cm-grid)" rx="6"/>
+  <rect width="918" height="218" x="1" y="1" fill="none" stroke="#be123c" stroke-width="0.8" stroke-opacity="0.3" rx="6"/>
+
+  <!-- Top Telemetry Header -->
+  <g transform="translate(25, 26)">
+    <circle cx="0" cy="0" r="3.5" fill="#ff1744" filter="url(#cm-glow)"/>
+    <text x="14" y="3" font-size="9" fill="#fda4af" font-weight="700" letter-spacing="2">CHRONO-WAVE // HARMONIC VELOCITY SEISMOGRAPH</text>
+    <text x="540" y="3" font-size="8" fill="#881337" letter-spacing="1.2">FREQ RESONANCE: 432 Hz</text>
+    <text x="870" y="3" font-size="8" fill="#ff1744" text-anchor="end" font-weight="700" letter-spacing="1">ORBITAL SYNAPSE ●</text>
+  </g>
+
+  <!-- Horizontal Axis Baseline & Tick Marks -->
+  <line x1="40" y1="135" x2="880" y2="135" stroke="#be123c" stroke-width="0.8" stroke-opacity="0.4"/>
+  <line x1="40" y1="90" x2="880" y2="90" stroke="#be123c" stroke-width="0.5" stroke-dasharray="3, 5" stroke-opacity="0.2"/>
+  <line x1="40" y1="50" x2="880" y2="50" stroke="#be123c" stroke-width="0.5" stroke-dasharray="3, 5" stroke-opacity="0.15"/>
+
+  <!-- Y-Axis Telemetry Scale -->
+  <text x="22" y="53" font-size="6.5" fill="#881337">MAX</text>
+  <text x="22" y="93" font-size="6.5" fill="#881337">MID</text>
+  <text x="22" y="138" font-size="6.5" fill="#881337">0.0</text>
+
+  <!-- ================= CONTINUOUS SEISMOGRAPH HARMONIC WAVE ================= -->
+  <!-- Wave Shaded Area Fill -->
+  <path d="M 40,135 Q 120,110 200,130 T 360,105 T 520,70 T 680,105 T 880,135 L 880,135 L 40,135 Z" fill="url(#wave-fill)"/>
+
+  <!-- Wave Vector Path Stroke -->
+  <path d="M 40,135 Q 120,110 200,130 T 360,105 T 520,70 T 680,105 T 880,135"
+        fill="none"
+        stroke="url(#wave-grad)"
+        stroke-width="2.2"
+        filter="url(#cm-glow)"
+        class="wave-anim"/>
+
+  <!-- Secondary Echo Wave -->
+  <path d="M 40,135 Q 120,120 200,115 T 360,118 T 520,90 T 680,115 T 880,135"
+        fill="none"
+        stroke="#fda4af"
+        stroke-width="0.8"
+        stroke-dasharray="4, 4"
+        opacity="0.4"/>
+
+  <!-- Vertical Scanning Laser Line -->
+  <g class="laser-line" transform="translate(40, 0)">
+    <line x1="0" y1="36" x2="0" y2="175" stroke="url(#laser-sweep)" stroke-width="1.8" filter="url(#cm-glow)"/>
+    <circle cx="0" cy="135" r="2.5" fill="#ffffff"/>
+  </g>
+
+  <!-- ================= CELESTIAL ACTIVITY NODES ================= -->
+  <!-- Peak Velocity Node (520, 70) -->
+  <g class="node-p1">
+    <circle cx="520" cy="70" r="12" fill="none" stroke="#ff1744" stroke-width="0.8" stroke-dasharray="2, 4" opacity="0.6"/>
+    <circle cx="520" cy="70" r="5" fill="#ffffff" filter="url(#node-glow)"/>
+    <circle cx="520" cy="70" r="2" fill="#ff1744"/>
+  </g>
+
+  <!-- Floating Telemetry HUD Frame over Peak Node (Image 1 style) -->
+  <g class="float-hud-box">
+    <rect x="475" y="28" width="90" height="24" fill="#140409" stroke="#ff1744" stroke-width="0.8" rx="3"/>
+    <text x="483" y="40" font-size="7" fill="#fda4af" font-weight="700">NODE::VELOCITY_PEAK</text>
+    <text x="483" y="49" font-size="6.5" fill="#ffffff">INTENSITY: 98.6% // 432Hz</text>
+    <!-- Pointer Line -->
+    <line x1="520" y1="52" x2="520" y2="65" stroke="#ff1744" stroke-width="0.8" stroke-dasharray="2, 2"/>
+  </g>
+
+  <!-- Secondary Active Node (680, 105) -->
+  <g class="node-p2">
+    <circle cx="680" cy="105" r="4" fill="#ff4d6d" filter="url(#cm-glow)"/>
+    <circle cx="680" cy="105" r="1.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Third Active Node (360, 105) -->
+  <g class="node-p3">
+    <circle cx="360" cy="105" r="4" fill="#ff4d6d" filter="url(#cm-glow)"/>
+  </g>
+
+  <!-- ================= 52-WEEK HIGH-DENSITY CHRONO HEAT MATRIX ================= -->
+  <!-- 52 Vertical Activity Slices along the timeline -->
+  <g transform="translate(40, 148)">
+    <!-- Month Timeline Markers -->
+    <g font-size="7" fill="#881337" letter-spacing="1">
+      <text x="0" y="0">JAN</text>
+      <text x="75" y="0">FEB</text>
+      <text x="150" y="0">MAR</text>
+      <text x="225" y="0">APR</text>
+      <text x="300" y="0">MAY</text>
+      <text x="375" y="0">JUN</text>
+      <text x="450" y="0">JUL</text>
+      <text x="525" y="0">AUG</text>
+      <text x="600" y="0">SEP</text>
+      <text x="675" y="0">OCT</text>
+      <text x="750" y="0">NOV</text>
+      <text x="815" y="0">DEC</text>
+    </g>
+
+    <!-- Mini High-Density Spectrum Ribbons (replacing boring dots with frequency bars) -->
+    <g transform="translate(0, 10)" fill="#1c050c">
+      <!-- 52 columns of sleek mini telemetry bars -->
+      <!-- Low base bars -->
+      <rect x="0" y="0" width="8" height="18" rx="1.5"/><rect x="16" y="0" width="8" height="18" rx="1.5"/><rect x="32" y="0" width="8" height="18" rx="1.5"/><rect x="48" y="0" width="8" height="18" rx="1.5"/><rect x="64" y="0" width="8" height="18" rx="1.5"/><rect x="80" y="0" width="8" height="18" rx="1.5"/><rect x="96" y="0" width="8" height="18" rx="1.5"/><rect x="112" y="0" width="8" height="18" rx="1.5"/><rect x="128" y="0" width="8" height="18" rx="1.5"/><rect x="144" y="0" width="8" height="18" rx="1.5"/><rect x="160" y="0" width="8" height="18" rx="1.5"/><rect x="176" y="0" width="8" height="18" rx="1.5"/><rect x="192" y="0" width="8" height="18" rx="1.5"/><rect x="208" y="0" width="8" height="18" rx="1.5"/><rect x="224" y="0" width="8" height="18" rx="1.5"/><rect x="240" y="0" width="8" height="18" rx="1.5"/><rect x="256" y="0" width="8" height="18" rx="1.5"/><rect x="272" y="0" width="8" height="18" rx="1.5"/><rect x="288" y="0" width="8" height="18" rx="1.5"/><rect x="304" y="0" width="8" height="18" rx="1.5"/><rect x="320" y="0" width="8" height="18" rx="1.5"/><rect x="336" y="0" width="8" height="18" rx="1.5"/><rect x="352" y="0" width="8" height="18" rx="1.5"/><rect x="368" y="0" width="8" height="18" rx="1.5"/><rect x="384" y="0" width="8" height="18" rx="1.5"/><rect x="400" y="0" width="8" height="18" rx="1.5"/><rect x="416" y="0" width="8" height="18" rx="1.5"/><rect x="432" y="0" width="8" height="18" rx="1.5"/><rect x="448" y="0" width="8" height="18" rx="1.5"/><rect x="464" y="0" width="8" height="18" rx="1.5"/><rect x="480" y="0" width="8" height="18" rx="1.5"/><rect x="496" y="0" width="8" height="18" rx="1.5"/><rect x="512" y="0" width="8" height="18" rx="1.5"/><rect x="528" y="0" width="8" height="18" rx="1.5"/><rect x="544" y="0" width="8" height="18" rx="1.5"/><rect x="560" y="0" width="8" height="18" rx="1.5"/><rect x="576" y="0" width="8" height="18" rx="1.5"/><rect x="592" y="0" width="8" height="18" rx="1.5"/><rect x="608" y="0" width="8" height="18" rx="1.5"/><rect x="624" y="0" width="8" height="18" rx="1.5"/><rect x="640" y="0" width="8" height="18" rx="1.5"/><rect x="656" y="0" width="8" height="18" rx="1.5"/><rect x="672" y="0" width="8" height="18" rx="1.5"/><rect x="688" y="0" width="8" height="18" rx="1.5"/><rect x="704" y="0" width="8" height="18" rx="1.5"/><rect x="720" y="0" width="8" height="18" rx="1.5"/><rect x="736" y="0" width="8" height="18" rx="1.5"/><rect x="752" y="0" width="8" height="18" rx="1.5"/><rect x="768" y="0" width="8" height="18" rx="1.5"/><rect x="784" y="0" width="8" height="18" rx="1.5"/><rect x="800" y="0" width="8" height="18" rx="1.5"/><rect x="816" y="0" width="8" height="18" rx="1.5"/><rect x="832" y="0" width="8" height="18" rx="1.5"/>
+
+      <!-- Active Energy Bars (Tiered in Crimson) -->
+      <rect x="64" y="6" width="8" height="12" fill="#881337" rx="1.5"/>
+      <rect x="144" y="4" width="8" height="14" fill="#be123c" rx="1.5"/>
+      <rect x="224" y="8" width="8" height="10" fill="#881337" rx="1.5"/>
+      <rect x="336" y="2" width="8" height="16" fill="#e11d48" rx="1.5"/>
+      <rect x="352" y="0" width="8" height="18" fill="#ff1744" filter="url(#cm-glow)" rx="1.5"/>
+      <rect x="416" y="6" width="8" height="12" fill="#881337" rx="1.5"/>
+      <rect x="504" y="3" width="8" height="15" fill="#be123c" rx="1.5"/>
+      <rect x="520" y="0" width="8" height="18" fill="#ffffff" filter="url(#node-glow)" rx="1.5"/>
+      <rect x="536" y="0" width="8" height="18" fill="#ff1744" filter="url(#cm-glow)" rx="1.5"/>
+      <rect x="624" y="5" width="8" height="13" fill="#881337" rx="1.5"/>
+      <rect x="672" y="2" width="8" height="16" fill="#e11d48" rx="1.5"/>
+      <rect x="688" y="0" width="8" height="18" fill="#ff1744" filter="url(#cm-glow)" rx="1.5"/>
+      <rect x="752" y="4" width="8" height="14" fill="#be123c" rx="1.5"/>
+      <rect x="800" y="1" width="8" height="17" fill="#ff1744" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- Bottom Terminal Tag -->
+  <g transform="translate(40, 202)">
+    <text x="0" y="0" font-size="7" fill="#881337" letter-spacing="1.5">VELOCITY: REAL-TIME // KERNEL ARCHITECT ACCELERATION</text>
+    <text x="840" y="0" font-size="7" fill="#fda4af" text-anchor="end" letter-spacing="1">ZERO-SNAKE PROTOCOL // INNOVATION ARCH</text>
+  </g>
+</svg>
