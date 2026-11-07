@@ -180,7 +180,7 @@ _start:
     <img src="https://img.shields.io/badge/Discord-170308?style=for-the-badge&logo=discord&logoColor=fda4af&labelColor=2b040e"/>
   </a>
   &nbsp;
-  <a href="mailto:hyzenval@example.com">
+  <a href="mailto:lavneuro@gmail.com">
     <img src="https://img.shields.io/badge/Email-170308?style=for-the-badge&logo=minutemailer&logoColor=fda4af&labelColor=2b040e"/>
   </a>
 
