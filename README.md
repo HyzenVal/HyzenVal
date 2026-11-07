@@ -63,9 +63,9 @@ const RUNTIME: KernelState = KernelState {
 
 <div align="center">
 
-  <!-- Crimson Streak Stats (Clean, Center Stage) -->
+  <!-- Crimson Streak Stats (Border matches GitHub Canvas) -->
   <a href="https://github.com/HyzenVal">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=HyzenVal&theme=dark&background=080205&border=be123c&stroke=e11d48&ring=ff1744&fire=ff1744&currStreakNum=ffffff&sideNums=fda4af&currStreakLabel=fda4af&sideLabels=881337&dates=64748b&hide_border=false" alt="HyzenVal GitHub Streak" height="195"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=HyzenVal&theme=dark&background=0d1117&border=30363d&stroke=e11d48&ring=ff1744&fire=ff1744&currStreakNum=ffffff&sideNums=fda4af&currStreakLabel=fda4af&sideLabels=881337&dates=8b949e&hide_border=true" alt="HyzenVal GitHub Streak" height="195"/>
   </a>
 
 </div>

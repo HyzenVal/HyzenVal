@@ -59,10 +59,9 @@
   ]]>
   </style>
 
-  <!-- Container -->
-  <rect width="920" height="170" fill="url(#km-bg)" rx="6"/>
+  <!-- Container (Seamless / Transparent to GitHub Canvas) -->
+  <rect width="920" height="170" fill="transparent" rx="6"/>
   <rect width="920" height="170" fill="url(#km-dots)" rx="6"/>
-  <rect width="918" height="168" x="1" y="1" fill="none" stroke="#e11d48" stroke-width="0.8" stroke-opacity="0.25" rx="6"/>
 
   <!-- Left: Execution Core Reactor -->
   <g transform="translate(15, 0)">

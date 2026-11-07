@@ -103,10 +103,9 @@
   ]]>
   </style>
 
-  <!-- Container -->
-  <rect width="920" height="220" fill="url(#cm-bg)" rx="6"/>
+  <!-- Container (Seamless / Transparent) -->
+  <rect width="920" height="220" fill="transparent" rx="6"/>
   <rect width="920" height="220" fill="url(#cm-grid)" rx="6"/>
-  <rect width="918" height="218" x="1" y="1" fill="none" stroke="#be123c" stroke-width="0.8" stroke-opacity="0.3" rx="6"/>
 
   <!-- Top Telemetry Header -->
   <g transform="translate(25, 26)">
@@ -229,3 +228,4 @@
     <text x="840" y="0" font-size="7" fill="#fda4af" text-anchor="end" letter-spacing="1">ZERO-SNAKE PROTOCOL // INNOVATION ARCH</text>
   </g>
 </svg>
+

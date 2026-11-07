@@ -47,8 +47,8 @@
   ]]>
   </style>
 
-  <!-- Shell -->
-  <rect width="450" height="95" fill="url(#ar-bg)" rx="6" stroke="#be123c" stroke-width="0.8" stroke-opacity="0.3"/>
+  <!-- Shell (Seamless with GitHub Table) -->
+  <rect width="450" height="95" fill="transparent" rx="6" stroke="#30363d" stroke-width="0.8"/>
 
   <!-- Vinyl / Wave Reactor Disc -->
   <g transform="translate(15, 15)">
