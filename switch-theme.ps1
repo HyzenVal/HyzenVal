@@ -24,3 +24,4 @@ Copy-Item "$targetDir\assets" ".\assets" -Recurse -Force
 
 Write-Host ">>> Success! Root README.md and assets/ updated to $targetDir." -ForegroundColor Green
 Write-Host ">>> Run 'git add .', 'git commit -m `"`chore: switch to $targetDir`"`', and 'git push' to deploy live!" -ForegroundColor Yellow
+

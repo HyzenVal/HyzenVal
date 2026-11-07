@@ -53,6 +53,38 @@ const RUNTIME: KernelState = KernelState {
   <img src="./assets/crimson-divider.svg" width="100%" />
 </div>
 
+### 📈 GitHub Orbital Metrics // Streak & Telemetry
+
+<div align="center">
+
+  <!-- Crimson Streak Stats & Overall Stats (Side by Side) -->
+  <a href="https://github.com/HyzenVal">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=HyzenVal&theme=dark&background=080205&border=be123c&stroke=e11d48&ring=ff1744&fire=ff1744&currStreakNum=ffffff&sideNums=fda4af&currStreakLabel=fda4af&sideLabels=881337&dates=64748b&hide_border=false" alt="HyzenVal GitHub Streak" height="175"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/HyzenVal">
+    <img src="https://github-readme-stats.vercel.app/api?username=HyzenVal&show_icons=true&theme=transparent&title_color=ff4d6d&text_color=fda4af&icon_color=ff1744&border_color=be123c&bg_color=080205&hide_border=false" alt="HyzenVal GitHub Stats" height="175"/>
+  </a>
+
+</div>
+
+<br />
+
+### 👾 Cyber Serpent Contribution Matrix
+
+<div align="center">
+
+  <!-- Immediate Animatic Contribution Matrix with Crimson Serpent Patrol -->
+  <img src="./assets/contribution-grid.svg" width="100%" alt="HyzenVal Contribution Matrix" />
+
+</div>
+
+<br />
+
+<div align="center">
+  <img src="./assets/crimson-divider.svg" width="100%" />
+</div>
+
 ### 🩸 Core Architecture & System Synapse
 
 <table>
@@ -155,4 +187,3 @@ _start:
   <sub>HYZENVAL // KERNEL ECLIPSE • PROTOCOL AFERA-XV • SHA-256 SIGNED • ALL RIGHTS RESERVED</sub>
 
 </div>
-
