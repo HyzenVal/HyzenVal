@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="m-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#05070a"/>
+      <stop offset="50%" stop-color="#0a0d14"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+
+    <linearGradient id="bar-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="70%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <filter id="m-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="m-dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.6" fill="#ffffff" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <style>
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'JetBrains Mono', 'Fira Code', monospace;
+      user-select: none;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    @keyframes liveProgress1 {
+      0% { width: 0%; }
+      100% { width: 94%; }
+    }
+
+    @keyframes liveProgress2 {
+      0% { width: 0%; }
+      100% { width: 88%; }
+    }
+
+    @keyframes liveProgress3 {
+      0% { width: 0%; }
+      100% { width: 82%; }
+    }
+
+    @keyframes liveProgress4 {
+      0% { width: 0%; }
+      100% { width: 91%; }
+    }
+
+    @keyframes orbitRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .p-dot { animation: pulseDot 2s ease-in-out infinite; transform-origin: center; }
+    .orbit-ring { transform-origin: 75px 80px; animation: orbitRotate 18s linear infinite; }
+    .orbit-ring-rev { transform-origin: 75px 80px; animation: orbitRotate 12s linear infinite reverse; }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="160" fill="url(#m-bg)" rx="6"/>
+  <rect width="900" height="160" fill="url(#m-dots)" rx="6"/>
+  <rect width="898" height="158" x="1" y="1" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.12" rx="6"/>
+
+  <!-- Left Module: Orbital Reactor / Core Resonance -->
+  <g transform="translate(15, 0)">
+    <!-- Concentric Rings -->
+    <circle cx="75" cy="80" r="48" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.1"/>
+    <circle cx="75" cy="80" r="38" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-opacity="0.25" stroke-dasharray="6, 5" class="orbit-ring"/>
+    <circle cx="75" cy="80" r="28" fill="none" stroke="#cbd5e1" stroke-width="1.2" stroke-opacity="0.5" stroke-dasharray="14, 8" class="orbit-ring-rev"/>
+    <circle cx="75" cy="80" r="16" fill="#0f172a" stroke="#ffffff" stroke-width="1.4" filter="url(#m-glow)"/>
+    <circle cx="75" cy="80" r="5" fill="#ffffff" class="p-dot" filter="url(#m-glow)"/>
+
+    <!-- Orbital Satellite Blip -->
+    <g class="orbit-ring">
+      <circle cx="75" cy="42" r="2.2" fill="#ffffff" filter="url(#m-glow)"/>
+    </g>
+
+    <!-- Label -->
+    <text x="75" y="142" font-size="7.5" fill="#64748b" text-anchor="middle" letter-spacing="1.5">HYPER-DRIVE // 99.8%</text>
+  </g>
+
+  <!-- Vertical Divider 1 -->
+  <line x1="175" y1="20" x2="175" y2="140" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.15" stroke-dasharray="3, 3"/>
+
+  <!-- Center Module: Telemetry Gauges -->
+  <g transform="translate(195, 24)">
+    <text x="0" y="8" font-size="8.5" fill="#94a3b8" font-weight="700" letter-spacing="2">SYSTEM TELEMETRY &amp; HARMONICS</text>
+    <text x="360" y="8" font-size="7.5" fill="#475569" letter-spacing="1.2">FREQ: 432 Hz</text>
+
+    <!-- Metric 1: Architecture -->
+    <g transform="translate(0, 24)">
+      <text x="0" y="7" font-size="8" fill="#e2e8f0" letter-spacing="1">SYSTEM ARCHITECTURE</text>
+      <text x="380" y="7" font-size="8" fill="#cbd5e1" text-anchor="end" font-weight="600">96.4%</text>
+      <rect x="0" y="12" width="380" height="4" fill="#1e293b" rx="2"/>
+      <rect x="0" y="12" width="365" height="4" fill="url(#bar-gradient)" rx="2"/>
+    </g>
+
+    <!-- Metric 2: Fullstack & Cloud -->
+    <g transform="translate(0, 50)">
+      <text x="0" y="7" font-size="8" fill="#e2e8f0" letter-spacing="1">FULL-STACK &amp; PLATFORM</text>
+      <text x="380" y="7" font-size="8" fill="#cbd5e1" text-anchor="end" font-weight="600">92.0%</text>
+      <rect x="0" y="12" width="380" height="4" fill="#1e293b" rx="2"/>
+      <rect x="0" y="12" width="350" height="4" fill="url(#bar-gradient)" rx="2"/>
+    </g>
+
+    <!-- Metric 3: Creative & UI/UX -->
+    <g transform="translate(0, 76)">
+      <text x="0" y="7" font-size="8" fill="#e2e8f0" letter-spacing="1">CREATIVE TECH &amp; SHADERS</text>
+      <text x="380" y="7" font-size="8" fill="#cbd5e1" text-anchor="end" font-weight="600">88.5%</text>
+      <rect x="0" y="12" width="380" height="4" fill="#1e293b" rx="2"/>
+      <rect x="0" y="12" width="336" height="4" fill="url(#bar-gradient)" rx="2"/>
+    </g>
+  </g>
+
+  <!-- Vertical Divider 2 -->
+  <line x1="610" y1="20" x2="610" y2="140" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.15" stroke-dasharray="3, 3"/>
+
+  <!-- Right Module: Mission Status & Coordinates -->
+  <g transform="translate(635, 26)">
+    <text x="0" y="8" font-size="8.5" fill="#94a3b8" font-weight="700" letter-spacing="2">ACTIVE DIRECTIVE</text>
+
+    <!-- Status Box -->
+    <rect x="0" y="18" width="235" height="42" fill="#0c1017" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.2" rx="4"/>
+    <circle cx="14" cy="34" r="3" fill="#ffffff" class="p-dot" filter="url(#m-glow)"/>
+    <text x="24" y="32" font-size="8" fill="#ffffff" font-weight="600" letter-spacing="1">STATUS: COMPILING_REALITY</text>
+    <text x="24" y="48" font-size="7" fill="#64748b" letter-spacing="0.8">MISSION: ZERO-LATENCY INTERACTION</text>
+
+    <!-- Telemetry Footnote -->
+    <g transform="translate(0, 78)">
+      <text x="0" y="0" font-size="7.5" fill="#94a3b8" letter-spacing="1.2">ORBITAL SECTOR // 09-K</text>
+      <text x="0" y="14" font-size="7" fill="#475569" letter-spacing="1">SECURE PROTOCOL // 256-BIT SHA</text>
+      <text x="235" y="14" font-size="7" fill="#cbd5e1" text-anchor="end" letter-spacing="1">ONLINE ●</text>
+    </g>
+  </g>
+</svg>
+
