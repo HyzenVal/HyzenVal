@@ -1,5 +1,11 @@
 <div align="center">
 
+  <!-- ================= ANIMATED CYBER AVATAR HUD ================= -->
+  <a href="https://github.com/HyzenVal">
+    <img src="./assets/avatar-hud.svg" width="165" alt="HyzenVal Cyber Avatar" />
+  </a>
+  <br/>
+
   <!-- ================= HERO ANIMATIC BANNER ================= -->
   <a href="https://github.com/HyzenVal">
     <img src="./assets/header.svg" width="100%" alt="HYZENVAL // KERNEL ECLIPSE" />
