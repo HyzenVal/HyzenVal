@@ -18,7 +18,7 @@
   <p align="center">
     <img src="https://img.shields.io/badge/KERNEL-ECLIPSE%20OS%20v4.19-2b040e?style=for-the-badge&logo=gnu-bash&logoColor=fda4af&labelColor=0d0205" />
     <img src="https://img.shields.io/badge/STATUS-RUNNING%20//%200.08ms-2b040e?style=for-the-badge&logo=statuspage&logoColor=fda4af&labelColor=0d0205" />
-    <img src="https://img.shields.io/badge/ADDR-0xHYZEN_VOID-2b040e?style=for-the-badge&logo=codewars&logoColor=fda4af&labelColor=0d0205" />
+    <img src="https://img.shields.io/badge/CORE-AI--ASSISTED-2b040e?style=for-the-badge&logo=sparkles&logoColor=fda4af&labelColor=0d0205" />
     <img src="https://img.shields.io/badge/RESONANCE-432.00%20Hz-2b040e?style=for-the-badge&logo=soundcharts&logoColor=fda4af&labelColor=0d0205" />
   </p>
 
@@ -33,6 +33,7 @@
 #[repr(C)]
 pub struct KernelState {
     pub architect: &'static str,  // "HyzenVal"
+    pub synthesis: &'static str,  // "AI-Assisted Architecture"
     pub resonance: f32,           // 432.00 Hz
     pub latency: f32,             // 0.08 ms
     pub directive: &'static str,  // "Building low-latency digital worlds & high-performance engines"
@@ -41,6 +42,7 @@ pub struct KernelState {
 
 const RUNTIME: KernelState = KernelState {
     architect: "HyzenVal",
+    synthesis: "AI-Assisted Architecture",
     resonance: 432.00,
     latency: 0.08,
     directive: "Compiling fluid reality & low-level cyber systems",
@@ -165,19 +167,19 @@ _start:
   <p>Establishing encrypted socket connection for collaborations and visionary builds:</p>
 
   <a href="https://github.com/HyzenVal">
-    <img src="https://img.shields.io/badge/GitHub-170308?style=for-the-badge&logo=github&logoColor=fda4af&labelColor=2b040e"/>
+    <img src="https://img.shields.io/badge/GitHub-HyzenVal-170308?style=for-the-badge&logo=github&logoColor=fda4af&labelColor=2b040e"/>
   </a>
   &nbsp;
-  <a href="https://x.com/">
-    <img src="https://img.shields.io/badge/X_Twitter-170308?style=for-the-badge&logo=x&logoColor=fda4af&labelColor=2b040e"/>
+  <a href="https://instagram.com/vrenzy5">
+    <img src="https://img.shields.io/badge/Instagram-vrenzy5-170308?style=for-the-badge&logo=instagram&logoColor=fda4af&labelColor=2b040e"/>
   </a>
   &nbsp;
-  <a href="https://discord.com/">
-    <img src="https://img.shields.io/badge/Discord-170308?style=for-the-badge&logo=discord&logoColor=fda4af&labelColor=2b040e"/>
+  <a href="https://discord.com">
+    <img src="https://img.shields.io/badge/Discord-vrenzy6761-170308?style=for-the-badge&logo=discord&logoColor=fda4af&labelColor=2b040e"/>
   </a>
   &nbsp;
   <a href="mailto:lavneuro@gmail.com">
-    <img src="https://img.shields.io/badge/Email-170308?style=for-the-badge&logo=minutemailer&logoColor=fda4af&labelColor=2b040e"/>
+    <img src="https://img.shields.io/badge/Gmail-lavneuro@gmail.com-170308?style=for-the-badge&logo=gmail&logoColor=fda4af&labelColor=2b040e"/>
   </a>
 
   <br/><br/>
@@ -186,6 +188,6 @@ _start:
     <img src="./assets/crimson-divider.svg" width="80%" />
   </p>
 
-  <sub>HYZENVAL // KERNEL ECLIPSE • PROTOCOL AFERA-XV • SHA-256 SIGNED • ALL RIGHTS RESERVED</sub>
+  <sub>HYZENVAL // KERNEL ECLIPSE • PROTOCOL AFERA-XV • AI-ASSISTED ARCHITECTURE • ALL RIGHTS RESERVED</sub>
 
 </div>
