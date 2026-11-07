@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 95" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ar-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080205"/>
+      <stop offset="100%" stop-color="#14050a"/>
+    </linearGradient>
+    <linearGradient id="ar-wave-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#881337"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="ar-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+  <![CDATA[
+    text {
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      user-select: none;
+    }
+    @keyframes wavePulse {
+      0%, 100% { height: 4px; }
+      50% { height: 28px; }
+    }
+    @keyframes trackScrub {
+      0% { width: 15px; }
+      100% { width: 320px; }
+    }
+    @keyframes vinylSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .w1 { animation: wavePulse 1.2s ease-in-out infinite 0.1s; }
+    .w2 { animation: wavePulse 0.9s ease-in-out infinite 0.3s; }
+    .w3 { animation: wavePulse 1.4s ease-in-out infinite 0.05s; }
+    .w4 { animation: wavePulse 1.1s ease-in-out infinite 0.4s; }
+    .w5 { animation: wavePulse 0.8s ease-in-out infinite 0.2s; }
+    .w6 { animation: wavePulse 1.5s ease-in-out infinite 0.15s; }
+    .scrub-anim { animation: trackScrub 50s linear infinite; }
+    .v-spin { transform-origin: 45px 47px; animation: vinylSpin 8s linear infinite; }
+  ]]>
+  </style>
+
+  <!-- Shell -->
+  <rect width="450" height="95" fill="url(#ar-bg)" rx="6" stroke="#be123c" stroke-width="0.8" stroke-opacity="0.3"/>
+
+  <!-- Vinyl / Wave Reactor Disc -->
+  <g transform="translate(15, 15)">
+    <rect width="65" height="65" fill="#040102" stroke="#e11d48" stroke-width="0.8" stroke-opacity="0.4" rx="4"/>
+    <circle cx="32" cy="32" r="24" fill="none" stroke="#be123c" stroke-width="0.6" stroke-opacity="0.3" class="v-spin"/>
+    <circle cx="32" cy="32" r="16" fill="none" stroke="#e11d48" stroke-width="0.8" stroke-dasharray="4, 4" class="v-spin"/>
+    <circle cx="32" cy="32" r="7" fill="#ffffff" filter="url(#ar-glow)"/>
+  </g>
+
+  <!-- Track Info -->
+  <g transform="translate(95, 28)">
+    <text x="0" y="0" font-size="7.5" fill="#fda4af" letter-spacing="1.5">STREAM // 432.00 Hz SYNTHESIS</text>
+    <text x="0" y="16" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="1.2">BLOOD ECLIPSE // CORE-VOID</text>
+    <text x="0" y="30" font-size="8.5" fill="#be123c" letter-spacing="0.8">AFERA XV • HYZENVAL</text>
+  </g>
+
+  <!-- Crimson Waveform EQ Bars (Right) -->
+  <g transform="translate(378, 44)">
+    <rect x="0" y="-14" width="3.5" height="12" fill="url(#ar-wave-grad)" rx="1.5" class="w1"/>
+    <rect x="6" y="-14" width="3.5" height="20" fill="url(#ar-wave-grad)" rx="1.5" class="w2"/>
+    <rect x="12" y="-14" width="3.5" height="26" fill="url(#ar-wave-grad)" rx="1.5" class="w3"/>
+    <rect x="18" y="-14" width="3.5" height="16" fill="url(#ar-wave-grad)" rx="1.5" class="w4"/>
+    <rect x="24" y="-14" width="3.5" height="22" fill="url(#ar-wave-grad)" rx="1.5" class="w5"/>
+    <rect x="30" y="-14" width="3.5" height="12" fill="url(#ar-wave-grad)" rx="1.5" class="w6"/>
+  </g>
+
+  <!-- Timeline Scrub Bar -->
+  <g transform="translate(95, 72)">
+    <rect x="0" y="0" width="335" height="3" fill="#24070e" rx="1.5"/>
+    <rect x="0" y="0" width="190" height="3" fill="#e11d48" rx="1.5" class="scrub-anim" filter="url(#ar-glow)"/>
+    <text x="335" y="-4" font-size="7" fill="#fda4af" text-anchor="end">03:14 / 04:32</text>
+  </g>
+</svg>
+
